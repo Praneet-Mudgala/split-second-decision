@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bel2aydqqura6"]
+
+[ext_resource type="Script" uid="uid://6br72ln7mw8i" path="res://Scenes/sugar_spikes.gd" id="1_88vyv"]
+[ext_resource type="Texture2D" uid="uid://di41s3b75bn26" path="res://Assets/tileset.png" id="2_nnmfy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv1xb"]
+atlas = ExtResource("2_nnmfy")
+region = Rect2(0, 144, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsn78"]
+atlas = ExtResource("2_nnmfy")
+region = Rect2(36, 144, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrm12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv1xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsn78")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2ea2"]
+size = Vector2(29, 19)
+
+[node name="SugarSpikes" type="Area2D"]
+script = ExtResource("1_88vyv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xrm12")
+autoplay = "default"
+frame_progress = 0.81297314
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 8.5)
+shape = SubResource("RectangleShape2D_b2ea2")

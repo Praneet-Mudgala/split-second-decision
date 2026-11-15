@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://bebofdgwjo0h8"]
+
+[ext_resource type="Script" uid="uid://co0f5gkumdf8u" path="res://Scenes/controls_screen.gd" id="1_xbjqm"]
+
+[node name="ControlsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbjqm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.29543644, 0.5300484, 0.69497186, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.5
+offset_right = 245.5
+offset_bottom = 124.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "How to play:"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Use WASD or Arrow Keys to move.
+Press E to swap the two characters
+Press R to restart the level and P to pause the game.
+
+Character 1, Ice Cream: Heavy, moves slow and falls fast, cannot jump. 
+Press Q to break fragile objects.
+
+Character 2, Cherry: Light, moves fast and falls slow, can jump and use
+ jump pads.
+
+Reach the spoon at the end as fast as you can!!"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "BACK"

@@ -1,0 +1,363 @@
+[gd_scene load_steps=13 format=4 uid="uid://qsknbsn3xkor"]
+
+[ext_resource type="Texture2D" uid="uid://buohk1rlxfg72" path="res://Assets/background.png" id="1_2mgoq"]
+[ext_resource type="Texture2D" uid="uid://di41s3b75bn26" path="res://Assets/tileset.png" id="1_055b2"]
+[ext_resource type="PackedScene" uid="uid://ckqw7ho81pv0i" path="res://Scenes/player.tscn" id="2_uhnj4"]
+[ext_resource type="PackedScene" uid="uid://hyunfivqjfjp" path="res://Scenes/Items/breakable_choco.tscn" id="5_055b2"]
+[ext_resource type="PackedScene" uid="uid://c3tcj23s7yjqn" path="res://Scenes/Items/hot_fudge.tscn" id="6_2mgoq"]
+[ext_resource type="PackedScene" uid="uid://buhukqu3kf4xf" path="res://Scenes/Items/jump_pad.tscn" id="7_uhnj4"]
+[ext_resource type="PackedScene" uid="uid://hp7kx8mq84x7" path="res://Scenes/Items/exit_spoon.tscn" id="7_vcilj"]
+[ext_resource type="PackedScene" uid="uid://bel2aydqqura6" path="res://Scenes/Items/sugar_spikes.tscn" id="8_2mgoq"]
+[ext_resource type="PackedScene" uid="uid://c0x88kxc4abr7" path="res://Scenes/Items/crumbly_wafer.tscn" id="9_uhnj4"]
+[ext_resource type="PackedScene" uid="uid://bfm8idqbbfdde" path="res://Scenes/hud.tscn" id="10_42uki"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
+texture = ExtResource("1_055b2")
+texture_region_size = Vector2i(36, 36)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-18, -7.710863, -18, -9.463335, 18, -9.463335, 18, 18, -18, 18)
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xfk5q"]
+tile_size = Vector2i(36, 36)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_8ffim")
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_2mgoq")
+
+[node name="Player" parent="." instance=ExtResource("2_uhnj4")]
+position = Vector2(39, 31)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_xfk5q")
+
+[node name="Breakable Chocos" type="Node2D" parent="."]
+
+[node name="BreakableChoco" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(1132, 526)
+
+[node name="BreakableChoco2" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(127, 81)
+
+[node name="BreakableChoco3" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(561, 243)
+
+[node name="BreakableChoco4" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(596, 224)
+
+[node name="BreakableChoco5" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(631, 201)
+
+[node name="BreakableChoco6" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(631, 167)
+
+[node name="BreakableChoco7" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(634, 131)
+
+[node name="BreakableChoco8" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(634, 96)
+
+[node name="BreakableChoco9" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(634, 63)
+
+[node name="BreakableChoco10" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(634, 31)
+
+[node name="BreakableChoco11" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(1003, 23)
+
+[node name="BreakableChoco13" parent="Breakable Chocos" instance=ExtResource("5_055b2")]
+position = Vector2(306, 269)
+
+[node name="JumpPads" type="Node2D" parent="."]
+
+[node name="JumpPad" parent="JumpPads" instance=ExtResource("7_uhnj4")]
+position = Vector2(192, 289)
+
+[node name="JumpPad2" parent="JumpPads" instance=ExtResource("7_uhnj4")]
+position = Vector2(562, 207)
+
+[node name="JumpPad3" parent="JumpPads" instance=ExtResource("7_uhnj4")]
+position = Vector2(336, 600)
+
+[node name="JumpPad4" parent="JumpPads" instance=ExtResource("7_uhnj4")]
+position = Vector2(914, 603)
+
+[node name="Hazard HotFudge" type="Node2D" parent="."]
+
+[node name="HotFudge" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(1094, 603)
+
+[node name="HotFudge5" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(1062, 600)
+
+[node name="HotFudge6" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(1027, 600)
+
+[node name="HotFudge2" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(1094, 544)
+
+[node name="HotFudge3" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(1094, 575)
+
+[node name="HotFudge4" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(855, 111)
+
+[node name="HotFudge7" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(309, 400)
+
+[node name="HotFudge8" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(272, 432)
+
+[node name="HotFudge9" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(233, 439)
+
+[node name="HotFudge10" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(193, 457)
+
+[node name="HotFudge11" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(159, 479)
+
+[node name="HotFudge12" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(127, 479)
+
+[node name="HotFudge13" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(95, 468)
+
+[node name="HotFudge14" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(69, 461)
+
+[node name="HotFudge15" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(21, 561)
+
+[node name="HotFudge16" parent="Hazard HotFudge" instance=ExtResource("6_2mgoq")]
+position = Vector2(21, 600)
+
+[node name="Hazard SugarSpikes" type="Node2D" parent="."]
+
+[node name="SugarSpikes" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(124, 316)
+
+[node name="SugarSpikes5" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(158, 316)
+
+[node name="SugarSpikes6" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(192, 316)
+
+[node name="SugarSpikes7" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(226, 316)
+
+[node name="SugarSpikes14" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(953, 600)
+
+[node name="SugarSpikes36" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(486, 600)
+
+[node name="SugarSpikes37" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(596, 602)
+
+[node name="SugarSpikes38" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(704, 600)
+
+[node name="SugarSpikes39" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(808, 600)
+
+[node name="SugarSpikes2" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(18, 316)
+
+[node name="SugarSpikes3" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(52, 316)
+
+[node name="SugarSpikes4" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(87, 316)
+
+[node name="SugarSpikes8" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(382, 101)
+
+[node name="SugarSpikes12" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(305, 165)
+rotation = -3.1415925
+
+[node name="SugarSpikes13" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(343, 165)
+rotation = -3.1415925
+
+[node name="SugarSpikes9" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(487, 103)
+rotation = -1.5707964
+
+[node name="SugarSpikes10" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(487, 70)
+rotation = -1.5707964
+
+[node name="SugarSpikes11" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(487, 36)
+rotation = -1.5707964
+
+[node name="SugarSpikes15" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(645, 316)
+
+[node name="SugarSpikes24" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(671, 316)
+
+[node name="SugarSpikes25" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(697, 316)
+
+[node name="SugarSpikes26" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(729, 316)
+
+[node name="SugarSpikes27" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(760, 316)
+
+[node name="SugarSpikes28" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(786, 316)
+
+[node name="SugarSpikes29" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(811, 316)
+
+[node name="SugarSpikes30" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(835, 316)
+
+[node name="SugarSpikes31" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(861, 316)
+
+[node name="SugarSpikes32" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(886, 316)
+
+[node name="SugarSpikes33" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(913, 316)
+
+[node name="SugarSpikes34" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(947, 316)
+
+[node name="SugarSpikes16" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(342, 315)
+
+[node name="SugarSpikes35" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(378, 315)
+
+[node name="SugarSpikes17" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(417, 316)
+
+[node name="SugarSpikes18" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(454, 316)
+
+[node name="SugarSpikes19" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(486, 316)
+
+[node name="SugarSpikes20" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(519, 316)
+
+[node name="SugarSpikes21" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(552, 316)
+
+[node name="SugarSpikes22" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(586, 316)
+
+[node name="SugarSpikes23" parent="Hazard SugarSpikes" instance=ExtResource("8_2mgoq")]
+position = Vector2(614, 316)
+
+[node name="CrumblyWafers" type="Node2D" parent="."]
+
+[node name="CrumblyWafer" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(305, 129)
+
+[node name="CrumblyWafer2" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(342, 129)
+
+[node name="CrumblyWafer3" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(381, 129)
+
+[node name="CrumblyWafer4" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(418, 129)
+
+[node name="CrumblyWafer5" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(454, 129)
+
+[node name="CrumblyWafer6" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(492, 129)
+
+[node name="CrumblyWafer7" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(668, 167)
+
+[node name="CrumblyWafer8" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(704, 155)
+
+[node name="CrumblyWafer9" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(740, 137)
+
+[node name="CrumblyWafer10" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(776, 118)
+
+[node name="CrumblyWafer11" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(814, 108)
+
+[node name="CrumblyWafer12" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(891, 86)
+
+[node name="CrumblyWafer13" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(928, 52)
+
+[node name="CrumblyWafer14" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(961, 52)
+
+[node name="CrumblyWafer15" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(1132, 90)
+
+[node name="CrumblyWafer16" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(1032, 196)
+
+[node name="CrumblyWafer17" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(1132, 271)
+
+[node name="CrumblyWafer18" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(1027, 340)
+
+[node name="CrumblyWafer19" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(1132, 415)
+
+[node name="CrumblyWafer20" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(1032, 474)
+
+[node name="CrumblyWafer22" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(306, 370)
+
+[node name="CrumblyWafer23" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(272, 399)
+
+[node name="CrumblyWafer24" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(233, 409)
+
+[node name="CrumblyWafer25" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(193, 427)
+
+[node name="CrumblyWafer26" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(158, 445)
+
+[node name="CrumblyWafer27" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(65, 432)
+
+[node name="CrumblyWafer28" parent="CrumblyWafers" instance=ExtResource("9_uhnj4")]
+position = Vector2(21, 526)
+
+[node name="ExitSpoon" parent="." instance=ExtResource("7_vcilj")]
+position = Vector2(1135, 597)
+rotation = 1.5707964
+next_level_path = "uid://dnea8kbwgvrtl"
+
+[node name="HUD" parent="." instance=ExtResource("10_42uki")]
+level_name = "Level 2"

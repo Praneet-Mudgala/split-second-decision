@@ -1,0 +1,167 @@
+[gd_scene load_steps=24 format=3 uid="uid://ckqw7ho81pv0i"]
+
+[ext_resource type="Script" uid="uid://irceqnhl4r7n" path="res://Scenes/player.gd" id="1_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://cir6ckeuulyb8" path="res://Assets/light_player damage.png" id="2_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://cs0xfqquw3alt" path="res://Assets/light_player idle1.png" id="3_olqyp"]
+[ext_resource type="Texture2D" uid="uid://c6hmktw48u34h" path="res://Assets/light_player idle2.png" id="4_wpjfl"]
+[ext_resource type="Texture2D" uid="uid://h0ufw46o06q1" path="res://Assets/light_player jump.png" id="5_bi64h"]
+[ext_resource type="Texture2D" uid="uid://dw3kl377kjsg3" path="res://Assets/light_player walkLeft1.png" id="6_2ijsl"]
+[ext_resource type="Texture2D" uid="uid://bir48lq5uec8y" path="res://Assets/light_player walkLeft2.png" id="7_p1odr"]
+[ext_resource type="Texture2D" uid="uid://csce4v35gyws0" path="res://Assets/light_player walkRight1.png" id="8_0gysh"]
+[ext_resource type="Texture2D" uid="uid://bl66ie8tdkri7" path="res://Assets/light_player walkRight2.png" id="9_vfarp"]
+[ext_resource type="Texture2D" uid="uid://b8ug7426mmbmu" path="res://Assets/light_player win.png" id="10_y6uwr"]
+[ext_resource type="Texture2D" uid="uid://crngloy24q5x" path="res://Assets/heavy_player attack.png" id="11_83xs0"]
+[ext_resource type="Texture2D" uid="uid://cpqlxflk5jcs0" path="res://Assets/heavy_player damage.png" id="12_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://dmlqfn81dd5pk" path="res://Assets/heavy_player idle1.png" id="13_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://bkwitrmhyjie1" path="res://Assets/heavy_player idle2.png" id="14_wohnl"]
+[ext_resource type="Texture2D" uid="uid://b8v63i7kqo64w" path="res://Assets/heavy_player walkLeft1.png" id="15_36dho"]
+[ext_resource type="Texture2D" uid="uid://bp28p6f05toen" path="res://Assets/heavy_player walkLeft2.png" id="16_yh6i2"]
+[ext_resource type="Texture2D" uid="uid://ddb6xdtextgbt" path="res://Assets/heavy_player walkRight1.png" id="17_nv4vc"]
+[ext_resource type="Texture2D" uid="uid://b7ixl0gcwxl1f" path="res://Assets/heavy_player walkRight2.png" id="18_8gxox"]
+[ext_resource type="Texture2D" uid="uid://bxxg5d81t0h44" path="res://Assets/heavy_player win.png" id="19_11gg7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpa8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l6n3p")
+}],
+"loop": true,
+"name": &"CherryDamage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_olqyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wpjfl")
+}],
+"loop": true,
+"name": &"CherryIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bi64h")
+}],
+"loop": true,
+"name": &"CherryJump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2ijsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p1odr")
+}],
+"loop": true,
+"name": &"CherryWalkLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0gysh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vfarp")
+}],
+"loop": true,
+"name": &"CherryWalkRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_y6uwr")
+}],
+"loop": true,
+"name": &"CherryWin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_83xs0")
+}],
+"loop": true,
+"name": &"IceAttack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ypfnu")
+}],
+"loop": true,
+"name": &"IceDamage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_xuaoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wohnl")
+}],
+"loop": true,
+"name": &"IceIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_36dho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yh6i2")
+}],
+"loop": true,
+"name": &"IceWalkLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_nv4vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8gxox")
+}],
+"loop": true,
+"name": &"IceWalkRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_11gg7")
+}],
+"loop": true,
+"name": &"IceWin",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbwqj"]
+size = Vector2(26, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwi16"]
+size = Vector2(22, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqm"]
+size = Vector2(32, 40)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fs7ks")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qpa8y")
+animation = &"IceAttack"
+autoplay = "IceIdle"
+
+[node name="IceCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sbwqj")
+
+[node name="CherryCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_xwi16")
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_sweqm")
