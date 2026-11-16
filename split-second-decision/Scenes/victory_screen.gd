@@ -1,6 +1,6 @@
 extends Control
 
-@export_file("*.tscn") var first_level_path: String = "res://scenes/level_1.tscn"
+@export_file("*.tscn") var first_level_path: String = "res://Scenes/level_1.tscn"
 
 func _ready() -> void:
 	Global.stop_run()

@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @export var level_name: String = "Level 1"
 
-@export_file("*.tscn") var title_screen_path: String = "res://scenes/title_screen.tscn"
+@export_file("*.tscn") var title_screen_path: String = "res://Scenes/title_screen.tscn"
 
 @onready var pause_menu: ColorRect = $PauseMenu
 
@@ -17,6 +17,7 @@ func _ready() -> void:
 	$PauseMenu/VBoxContainer/TitleButton.pressed.connect(go_to_title)
 
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	$HudLabel.text = level_name + "  |  Time: " + Global.get_formatted_time() + "  |  Deaths: " + str(Global.deaths)
 	

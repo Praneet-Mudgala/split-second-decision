@@ -5,8 +5,8 @@ var was_on_floor: bool = true
 var time_passed: float = 0.0
 @onready var start_y: float = position.y
 
-const DUST_PARTICLES = preload("res://scenes/dust_particles.tscn")
-const BURST_PARTICLES = preload("res://scenes/burst_particles.tscn")
+const DUST_PARTICLES = preload("res://Scenes/dust_particles.tscn")
+const BURST_PARTICLES = preload("res://Scenes/burst_particles.tscn")
 
 @export var ice_speed: float = 150.0
 

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const BURST_PARTICLES = preload("res://scenes/burst_particles.tscn")
+const BURST_PARTICLES = preload("res://Scenes/burst_particles.tscn")
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D

@@ -1,6 +1,6 @@
 extends Control
 
-@export_file("*.tscn") var title_screen_path: String = "res://scenes/title_screen.tscn"
+@export_file("*.tscn") var title_screen_path: String = "res://Scenes/title_screen.tscn"
 
 func _ready() -> void:
 	$VBoxContainer/BackButton.pressed.connect(_on_back_pressed)

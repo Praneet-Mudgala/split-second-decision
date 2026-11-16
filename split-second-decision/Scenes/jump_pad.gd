@@ -1,6 +1,6 @@
 extends Area2D
 
-const BURST_PARTICLES = preload("res://scenes/jump_pad_particles.tscn")
+const BURST_PARTICLES = preload("res://Scenes/jump_pad_particles.tscn")
 
 @export var bounce_velocity: float = -600.0
 
