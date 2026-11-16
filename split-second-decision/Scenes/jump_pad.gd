@@ -16,3 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 		particles.burst(Color("f5f5f5ff"))
 		
 		body.velocity.y = bounce_velocity
+		
+		var tween := create_tween()
+		$Sprite2D.scale = Vector2(1.4, 0.55)
+		tween.tween_property($Sprite2D, "scale", Vector2.ONE, 0.25).set_trans(Tween.TRANS_ELASTIC)

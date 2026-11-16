@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dmo1moy5iitim"]
+[gd_scene load_steps=14 format=4 uid="uid://dmo1moy5iitim"]
 
 [ext_resource type="Texture2D" uid="uid://di41s3b75bn26" path="res://Assets/tileset.png" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://buohk1rlxfg72" path="res://Assets/background.png" id="1_xrdnt"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://hp7kx8mq84x7" path="res://Scenes/Items/exit_spoon.tscn" id="7_lsmp6"]
 [ext_resource type="PackedScene" uid="uid://ckqw7ho81pv0i" path="res://Scenes/player.tscn" id="9_wrinw"]
 [ext_resource type="PackedScene" uid="uid://bfm8idqbbfdde" path="res://Scenes/hud.tscn" id="10_chwpn"]
+
+[sub_resource type="Gradient" id="Gradient_chwpn"]
+colors = PackedColorArray(1, 0.6858531, 0.6323866, 1, 0.996617, 0.8322607, 0.80460846, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
 texture = ExtResource("1_vk57k")
@@ -38,6 +41,18 @@ sources/0 = SubResource("TileSetAtlasSource_8ffim")
 position = Vector2(576, 324)
 texture = ExtResource("1_xrdnt")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(576, -20)
+amount = 35
+lifetime = 8.0
+preprocess = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 10)
+gravity = Vector2(10, 25)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_chwpn")
+
 [node name="Player" parent="." instance=ExtResource("9_wrinw")]
 position = Vector2(21, 28)
 
@@ -59,6 +74,17 @@ position = Vector2(233, 495)
 [node name="BreakableChoco4" parent="Breakable Chocos" instance=ExtResource("2_8ffim")]
 position = Vector2(233, 459)
 
+[node name="Label" type="Label" parent="Breakable Chocos/BreakableChoco4"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -11.0
+offset_top = -43.0
+offset_right = 29.0
+offset_bottom = -20.0
+grow_horizontal = 2
+text = "[Q]"
+
 [node name="BreakableChoco5" parent="Breakable Chocos" instance=ExtResource("2_8ffim")]
 position = Vector2(233, 601)
 
@@ -74,8 +100,22 @@ position = Vector2(1000, 281)
 [node name="BreakableChoco10" parent="Breakable Chocos" instance=ExtResource("2_8ffim")]
 position = Vector2(899, 205)
 
+[node name="Label" type="Label" parent="Breakable Chocos/BreakableChoco10"]
+offset_left = -37.0
+offset_top = -49.0
+offset_right = 46.0
+offset_bottom = -26.0
+text = "Break this!"
+
 [node name="BreakableChoco7" parent="Breakable Chocos" instance=ExtResource("2_8ffim")]
 position = Vector2(1097, 24)
+
+[node name="Label" type="Label" parent="Breakable Chocos/BreakableChoco7"]
+offset_left = -41.0
+offset_top = 48.0
+offset_right = 50.0
+offset_bottom = 71.0
+text = "Good luck..."
 
 [node name="BreakableChoco11" parent="Breakable Chocos" instance=ExtResource("2_8ffim")]
 position = Vector2(546, 208)
@@ -86,6 +126,14 @@ position = Vector2(546, 173)
 [node name="BreakableChoco13" parent="Breakable Chocos" instance=ExtResource("2_8ffim")]
 position = Vector2(546, 139)
 
+[node name="Label" type="Label" parent="Breakable Chocos/BreakableChoco13"]
+offset_left = 21.0
+offset_top = -7.0
+offset_right = 145.0
+offset_bottom = 42.0
+text = "Swap and break
+through here!"
+
 [node name="BreakableChoco14" parent="Breakable Chocos" instance=ExtResource("2_8ffim")]
 position = Vector2(547, 104)
 
@@ -93,6 +141,13 @@ position = Vector2(547, 104)
 
 [node name="JumpPad" parent="JumpPads" instance=ExtResource("3_xfk5q")]
 position = Vector2(592, 601)
+
+[node name="Label" type="Label" parent="JumpPads/JumpPad"]
+offset_left = -80.0
+offset_top = -32.0
+offset_right = 7.0
+offset_bottom = -9.0
+text = "Jump again"
 
 [node name="JumpPad2" parent="JumpPads" instance=ExtResource("3_xfk5q")]
 position = Vector2(703, 601)
@@ -185,6 +240,13 @@ position = Vector2(525, 281)
 [node name="SugarSpikes" parent="Hazard SugarSpikes" instance=ExtResource("5_evi0p")]
 position = Vector2(412, 601)
 
+[node name="Label" type="Label" parent="Hazard SugarSpikes/SugarSpikes"]
+offset_left = -41.0
+offset_top = -32.0
+offset_right = 46.0
+offset_bottom = -9.0
+text = "E and jump"
+
 [node name="SugarSpikes2" parent="Hazard SugarSpikes" instance=ExtResource("5_evi0p")]
 position = Vector2(848, 205)
 
@@ -204,6 +266,13 @@ position = Vector2(645, 435)
 
 [node name="CrumblyWafer2" parent="CrumblyWafers" instance=ExtResource("6_evi0p")]
 position = Vector2(685, 435)
+
+[node name="Label" type="Label" parent="CrumblyWafers/CrumblyWafer2"]
+offset_left = -43.0
+offset_top = -44.0
+offset_right = 48.0
+offset_bottom = -21.0
+text = "Be careful..."
 
 [node name="CrumblyWafer3" parent="CrumblyWafers" instance=ExtResource("6_evi0p")]
 position = Vector2(726, 435)
@@ -243,6 +312,13 @@ position = Vector2(620, 51)
 
 [node name="CrumblyWafer12" parent="CrumblyWafers" instance=ExtResource("6_evi0p")]
 position = Vector2(657, 37)
+
+[node name="Label" type="Label" parent="CrumblyWafers/CrumblyWafer12"]
+offset_left = -17.0
+offset_top = -34.0
+offset_right = 23.0
+offset_bottom = -11.0
+text = "Run, run run!"
 
 [node name="CrumblyWafer13" parent="CrumblyWafers" instance=ExtResource("6_evi0p")]
 position = Vector2(694, 37)

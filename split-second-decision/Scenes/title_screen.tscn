@@ -1,6 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5bscydg4u7f3"]
+[gd_scene load_steps=10 format=3 uid="uid://c5bscydg4u7f3"]
 
 [ext_resource type="Script" uid="uid://btgb4ajypd7ce" path="res://Scenes/title_screen.gd" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://dmlqfn81dd5pk" path="res://Assets/heavy_player idle1.png" id="2_4gxqj"]
+[ext_resource type="Texture2D" uid="uid://bkwitrmhyjie1" path="res://Assets/heavy_player idle2.png" id="3_twnyg"]
+[ext_resource type="Texture2D" uid="uid://cs0xfqquw3alt" path="res://Assets/light_player idle1.png" id="4_55kwv"]
+[ext_resource type="Texture2D" uid="uid://c6hmktw48u34h" path="res://Assets/light_player idle2.png" id="5_12m1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klylv"]
+bg_color = Color(0.96862745, 0.5803922, 0.69411767, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3fck"]
+bg_color = Color(0.85882354, 0.25882354, 0.4862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gxqj"]
+bg_color = Color(0.9372549, 0.40392157, 0.58431375, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_55kwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4gxqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_twnyg")
+}],
+"loop": true,
+"name": &"FUNN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_55kwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_12m1t")
+}],
+"loop": true,
+"name": &"Fun",
+"speed": 5.0
+}]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -43,6 +81,9 @@ text = "Split Second Decision"
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_klylv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p3fck")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4gxqj")
 text = "PLAY"
 
 [node name="ControlsButton" type="Button" parent="VBoxContainer"]
@@ -73,3 +114,17 @@ text = "Level 3"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Level 4"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(265, 339)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_55kwv")
+animation = &"FUNN"
+autoplay = "FUNN"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(882.00006, 339)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_55kwv")
+animation = &"Fun"
+autoplay = "Fun"

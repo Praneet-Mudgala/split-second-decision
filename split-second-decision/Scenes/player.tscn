@@ -149,6 +149,14 @@ size = Vector2(32, 40)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fs7ks")
 
+[node name="TrailParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 10)
+amount = 16
+lifetime = 0.4
+gravity = Vector2(0, 60)
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qpa8y")
 animation = &"IceAttack"

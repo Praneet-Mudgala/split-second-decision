@@ -81,6 +81,9 @@ func _physics_process(delta: float) -> void:
 		get_parent().add_child(dust)
 		dust.burst(Color("#ffffffff"))
 	was_on_floor = is_on_floor()
+	
+	$TrailParticles.color = Color("fc555bff") if is_cherry else Color("fff8deff")
+	$TrailParticles.emitting = velocity.length() > 20
 
 
 

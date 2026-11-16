@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://wdiavmp7c4s7"]
+[gd_scene load_steps=14 format=4 uid="uid://wdiavmp7c4s7"]
 
 [ext_resource type="Texture2D" uid="uid://buohk1rlxfg72" path="res://Assets/background.png" id="1_wi344"]
 [ext_resource type="PackedScene" uid="uid://ckqw7ho81pv0i" path="res://Scenes/player.tscn" id="2_f6i20"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c0x88kxc4abr7" path="res://Scenes/Items/crumbly_wafer.tscn" id="8_54c2w"]
 [ext_resource type="PackedScene" uid="uid://c3tcj23s7yjqn" path="res://Scenes/Items/hot_fudge.tscn" id="9_3v663"]
 [ext_resource type="PackedScene" uid="uid://bfm8idqbbfdde" path="res://Scenes/hud.tscn" id="10_7huqf"]
+
+[sub_resource type="Gradient" id="Gradient_7huqf"]
+colors = PackedColorArray(1, 0.6858531, 0.6323866, 1, 0.996617, 0.8322607, 0.80460846, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
 texture = ExtResource("3_dvrgg")
@@ -37,6 +40,18 @@ sources/0 = SubResource("TileSetAtlasSource_8ffim")
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 texture = ExtResource("1_wi344")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(576, -20)
+amount = 35
+lifetime = 8.0
+preprocess = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 10)
+gravity = Vector2(10, 25)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_7huqf")
 
 [node name="Player" parent="." instance=ExtResource("2_f6i20")]
 position = Vector2(1133, 591)

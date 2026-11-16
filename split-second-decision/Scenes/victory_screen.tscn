@@ -1,6 +1,53 @@
-[gd_scene load_steps=2 format=3 uid="uid://wb1xw5mndtwv"]
+[gd_scene load_steps=9 format=3 uid="uid://wb1xw5mndtwv"]
 
 [ext_resource type="Script" uid="uid://d2a1gh5sm21yx" path="res://Scenes/victory_screen.gd" id="1_oq8vb"]
+[ext_resource type="Texture2D" uid="uid://dmlqfn81dd5pk" path="res://Assets/heavy_player idle1.png" id="2_ha7rp"]
+[ext_resource type="Texture2D" uid="uid://bkwitrmhyjie1" path="res://Assets/heavy_player idle2.png" id="3_hca03"]
+[ext_resource type="Texture2D" uid="uid://cs0xfqquw3alt" path="res://Assets/light_player idle1.png" id="4_x64rj"]
+[ext_resource type="Texture2D" uid="uid://c6hmktw48u34h" path="res://Assets/light_player idle2.png" id="5_8vase"]
+[ext_resource type="Texture2D" uid="uid://b8ug7426mmbmu" path="res://Assets/light_player win.png" id="6_12bqr"]
+[ext_resource type="Texture2D" uid="uid://bxxg5d81t0h44" path="res://Assets/heavy_player win.png" id="7_i2gve"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trbyh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ha7rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hca03")
+}],
+"loop": true,
+"name": &"FUNN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x64rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8vase")
+}],
+"loop": true,
+"name": &"Fun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_12bqr")
+}],
+"loop": true,
+"name": &"vcc",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_i2gve")
+}],
+"loop": true,
+"name": &"vic",
+"speed": 5.0
+}]
 
 [node name="VictoryScreen" type="Control"]
 layout_mode = 3
@@ -47,3 +94,17 @@ theme_override_font_sizes/font_size = 36
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "PLAY AGAIN"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(182, 309)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_trbyh")
+animation = &"vic"
+autoplay = "vic"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(977.00006, 303)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_trbyh")
+animation = &"vcc"
+autoplay = "vcc"
